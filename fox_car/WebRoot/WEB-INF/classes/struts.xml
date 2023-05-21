@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="false" />
+	 <constant name="struts.multipart.maxSize" value="6000000"></constant>
+	<package name="default" extends="struts-default,json-default"
+		namespace="/">
+		<global-results>
+			<result name="input">error.jsp</result>
+		</global-results>
+
+
+		<action name="biotech_add" class="biotechaction" method="add">
+			<result name="success">
+				/admin/biotech/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="biotech_listtiezi_0" class="biotechaction" method="listtiezi_0">
+			<result name="success">
+				/admin/luntan/list0.jsp
+            </result>
+		</action>
+		<action name="biotech_listtiezi_1" class="biotechaction" method="listtiezi_1">
+			<result name="success">
+				/admin/luntan/list1.jsp
+            </result>
+		</action>
+		<action name="biotech_listtiezi_2" class="biotechaction" method="listtiezi_2">
+			<result name="success">
+				/admin/luntan/list2.jsp
+            </result>
+		</action>
+		<action name="biotech_listtiezi_3" class="biotechaction" method="listtiezi_3">
+			<result name="success">
+				/admin/luntan/list3.jsp
+            </result>
+		</action>
+		
+		<action name="biotech_update_status20" class="biotechaction" method="update_status20">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_0</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_update_status21" class="biotechaction" method="update_status21">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_1</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_update_status22" class="biotechaction" method="update_status22">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_2</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_update_status23" class="biotechaction" method="update_status23">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_3</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<action name="biotech_deletetiezi0" class="biotechaction" method="deletetiezi0">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_0</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deletetiezi1" class="biotechaction" method="deletetiezi1">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_1</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deletetiezi2" class="biotechaction" method="deletetiezi2">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_2</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deletetiezi3" class="biotechaction" method="deletetiezi3">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi_3</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		
+		
+		<action name="biotech_addnews" class="biotechaction" method="addnews">
+			<result name="success">
+				/admin/news/add.jsp
+            </result>
+		</action>
+		<action name="biotech_addCarType" class="biotechaction" method="addCarType">
+			<result name="success">
+				/admin/carType/add.jsp
+			</result>
+		</action>
+		<action name="biotech_edit" class="biotechaction" method="edit">
+			<result name="success">
+				/admin/biotech/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="biotech_editnews" class="biotechaction" method="editnews">
+			<result name="success">
+				/admin/news/add.jsp
+            </result>
+		</action>
+		<action name="biotech_save" class="biotechaction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_delfolder" class="biotechaction" method="delfolder">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_uploadarticle1" class="biotechaction" method="uploadarticle1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_list_shenhe1_daifenpei" class="biotechaction" method="list_shenhe1_daifenpei">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listbytype" class="biotechaction" method="listbytype">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="biotech_savenews" class="biotechaction" method="savenews">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listnews</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_saveCarType" class="carTypeAction" method="saveCarType">
+			<result name="success" type="redirectAction">
+				<param name="actionName">carType_listCarType</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="carType_deleteCarType" class="carTypeAction" method="deleteCarType">
+			<result name="success" type="redirectAction">
+				<param name="actionName">carType_listCarType</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="carType_listCarType" class="carTypeAction" method="listCarType">
+			<result name="success">
+				/admin/carType/list.jsp
+			</result>
+		</action>
+		<action name="type_list1_" class="carTypeAction" method="listCarType1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+				</param>
+			</result>
+		</action>
+		<action name="biotech_delete" class="biotechaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deletenews" class="biotechaction" method="deletenews">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listnews</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deleteproj" class="biotechaction" method="deleteproj">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listproj</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deletetiezi" class="biotechaction" method="deletetiezi">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_deleteck" class="biotechaction" method="deleteck">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listck</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_shenhe" class="biotechaction" method="shenhe">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listck</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_shenheck" class="biotechaction" method="shenheck">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listck</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_update_status2" class="biotechaction" method="update_status2">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_listtiezi</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_list" class="biotechaction" method="list">
+			<result name="success">
+				/admin/luntan/list.jsp
+            </result>
+		</action>
+		<action name="biotech_listnews" class="biotechaction" method="listnews">
+			<result name="success">
+				/admin/news/list.jsp
+            </result>
+		</action>
+		<action name="analysis_listAnalysis" class="analysisAction" method="listAnalysis">
+			<result name="success">
+				/admin/analysis/list.jsp
+			</result>
+		</action>
+		<action name="biotech_listproj" class="biotechaction" method="listproj">
+			<result name="success">
+				/admin/proj/list.jsp
+            </result>
+		</action>
+		<action name="biotech_listck" class="biotechaction" method="listck">
+			<result name="success">
+				/admin/ck/list.jsp
+            </result>
+		</action>
+		<action name="biotech_listtiezi" class="biotechaction" method="listtiezi">
+			<result name="success">
+				/admin/luntan/list.jsp
+            </result>
+		</action>
+		<action name="biotech_listjson" class="biotechaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_shenhe_client" class="biotechaction" method="shenhe_client">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_list_shenhe0" class="biotechaction" method="list_shenhe0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_dianzan" class="biotechaction" method="dianzan">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_dianzan_" class="biotechaction" method="dianzan_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_udpate_jiedan" class="biotechaction" method="udpate_jiedan">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_addfolder" class="biotechaction" method="addfolder">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_saveproj" class="biotechaction" method="saveproj">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_saveck" class="biotechaction" method="saveck">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyfolder" class="biotechaction"
+			method="listjsonbyfolder">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_uploadarticle" class="biotechaction"
+			method="uploadarticle">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyuser" class="biotechaction"
+			method="listjsonbyuser">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyuser0" class="biotechaction"
+			method="listjsonbyuser0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyuser1" class="biotechaction"
+			method="listjsonbyuser1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyuser2" class="biotechaction"
+			method="listjsonbyuser2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjsonbyuser3" class="biotechaction"
+			method="listjsonbyuser3">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson0" class="biotechaction" method="listjson0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_loadAllJson0_0" class="biotechaction" method="loadAllJson0_0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_loadAllJson0_1" class="biotechaction" method="loadAllJson0_1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_loadAllJson0_2" class="biotechaction" method="loadAllJson0_2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_udpate_wancheng" class="biotechaction" method="udpate_wancheng">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson1" class="biotechaction" method="listjson1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson2" class="biotechaction" method="listjson2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson3" class="biotechaction" method="listjson3">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_detailjson" class="biotechaction" method="detailjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_del" class="biotechaction" method="del">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+<!--  -->
+
+
+		<action name="fox_list1" class="foxaction" method="list1">
+			<result name="success">
+				/admin/luntan/list1.jsp
+            </result>
+		</action>
+		<action name="fox_list2" class="foxaction" method="list2">
+			<result name="success">
+				/admin/luntan/list2.jsp
+            </result>
+		</action>
+		
+		<action name="fox_del1" class="foxaction" method="del1">
+			<result name="success" type="redirectAction">
+				<param name="actionName">fox_list1</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="fox_del2" class="foxaction" method="del2">
+			<result name="success" type="redirectAction">
+				<param name="actionName">fox_list2</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="fox_save1_" class="foxaction" method="save1_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_list1_" class="foxaction" method="list1_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_save2_" class="foxaction" method="save2_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_listbyuser1" class="foxaction" method="listbyuser1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_listbyuser2" class="foxaction" method="listbyuser2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_jiesuan2_" class="foxaction" method="jiesuan2_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_jiesuan1" class="foxaction" method="jiesuan1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_del1_" class="foxaction" method="del1_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="fox_del2_" class="foxaction" method="del2_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+<!--  -->
+
+
+		<action name="login" class="loginaction" method="login">
+			<result name="success">
+				/admin.jsp
+            </result>
+			<result name="login">
+				/login.jsp
+            </result>
+		</action>
+
+		<action name="goodsjson" class="goodsaction" method="goodsjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="guanzhu_save" class="guanzhuaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="guanzhu_listjson" class="guanzhuaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="detailjson" class="goodsaction" method="detailjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="user_login" class="useraction" method="login">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_update_pwd" class="useraction" method="update_pwd">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_uploadphoto" class="useraction" method="uploadphoto">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_loaddata" class="useraction" method="loaddata">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_udpate_jiesuan" class="biotechaction" method="udpate_jiesuan">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		
+		<action name="user_chongzhi_in" class="useraction" method="chongzhi_in">
+			<result name="success">
+				/admin/member/chongzhi.jsp
+            </result>
+		</action>
+		<action name="user_chongzhi_in1" class="useraction" method="chongzhi_in1">
+			<result name="success">
+				/admin/member/chongzhi1.jsp
+            </result>
+		</action>
+		<action name="user_chongzhi_in2" class="useraction" method="chongzhi_in2">
+			<result name="success">
+				/admin/member/chongzhi2.jsp
+            </result>
+		</action>
+		<action name="user_chongzhi" class="useraction" method="chongzhi">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list0</param>
+			</result>
+		</action>
+		<action name="user_chongzhi1" class="useraction" method="chongzhi1">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list1</param>
+			</result>
+		</action>
+		<action name="user_chongzhi2" class="useraction" method="chongzhi2">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list2</param>
+			</result>
+		</action>
+		<action name="user_listjson" class="useraction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_update_address" class="useraction" method="update_address">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_listjson2_0" class="useraction" method="listjson2_0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_chongzhi_" class="useraction" method="chongzhi_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_tixian" class="useraction" method="tixian">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="user_load" class="useraction" method="load">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_save" class="commentsaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_listjson" class="commentsaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_savemsg" class="commentsaction" method="savemsg">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_listmsgjson" class="commentsaction" method="listmsgjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_list" class="commentsaction" method="list">
+			<result name="success">
+				/admin/message/list.jsp
+            </result>
+		</action>
+		<action name="comments_list2" class="commentsaction" method="list2">
+			<result name="success">
+				/admin/message/list.jsp
+            </result>
+		</action>
+		<action name="comments_delete" class="commentsaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">comments_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="comments_deletemsg" class="commentsaction" method="deletemsg">
+			<result name="success" type="redirectAction">
+				<param name="actionName">comments_list2</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="user_list" class="useraction" method="list">
+			<result name="success">
+				/admin/member/list.jsp
+            </result>
+		</action>
+		<action name="user_list0" class="useraction" method="list0">
+			<result name="success">
+				/admin/member/list.jsp
+            </result>
+		</action>
+		<action name="user_list1" class="useraction" method="list1">
+			<result name="success">
+				/admin/member/list1.jsp
+            </result>
+		</action>
+		<action name="user_list2" class="useraction" method="list2">
+			<result name="success">
+				/admin/member/list2.jsp
+            </result>
+		</action>
+		<action name="user_del" class="useraction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list0</param>
+			</result>
+		</action>
+		<action name="user_del1" class="useraction" method="delete1">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list1</param>
+			</result>
+		</action>
+		<action name="user_del2" class="useraction" method="delete2">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list2</param>
+			</result>
+		</action>
+		<action name="user_reg" class="useraction" method="reg">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_listjson2" class="useraction" method="listjson2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_modify" class="useraction" method="modify">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+
+	</package>
+</struts>    
